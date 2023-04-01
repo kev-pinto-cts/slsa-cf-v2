@@ -7,8 +7,5 @@ steps:
     - '-c'
     - |
       echo "Applying TF"
-      pwd
-      ls -l
-      uname -a
       terraform init
-      # terraform plan
+      terraform plan
