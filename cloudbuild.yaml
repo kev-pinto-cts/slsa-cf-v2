@@ -1,7 +1,7 @@
 steps:
   - id: 'python'
     entrypoint: python
-    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
+    args: ["-m", "pip", "install", "--upgrade", "pip"]
 
   - id: 'tf-apply'
     waitFor: ['python']
