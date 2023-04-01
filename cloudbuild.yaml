@@ -1,9 +1,12 @@
 steps:
-  - id: "pybuild"
+  - id: "keyring"
     name: python
     entrypoint: pip
     args: ["install", "keyring"]
-
+  - id: "keyring"
+    name: python
+    entrypoint: pip
+    args: ["install", "keyrings.google-artifactregistry-auth"]
   - id: "tf apply"
     name: "hashicorp/terraform:1.4.4"
     dir: "./slsainfra"
