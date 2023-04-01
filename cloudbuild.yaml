@@ -3,11 +3,21 @@ steps:
     name: python
     entrypoint: pip
     args: ["install", "keyring"]
+
   - id: "arti-reg-auth"
     waitFor: ['keyring']
     name: python
     entrypoint: pip
     args: ["install", "keyrings.google-artifactregistry-auth"]
+
+  - id: "list-keys"
+    waitFor: ['arti-reg-auth']
+    name: bash
+    args:
+      - "-c"
+      - |
+        keyring --list-backends
+
   - id: "tf apply"
     waitFor: ['arti-reg-auth']
     name: "hashicorp/terraform:1.4.4"
