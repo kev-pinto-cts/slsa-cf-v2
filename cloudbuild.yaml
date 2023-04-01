@@ -1,4 +1,9 @@
 steps:
+  - id: "pybuild"
+    name: python
+    entrypoint: pip
+    args: ["install", "keyring"]
+
   - id: "tf apply"
     name: "hashicorp/terraform:1.4.4"
     dir: "./slsainfra"
