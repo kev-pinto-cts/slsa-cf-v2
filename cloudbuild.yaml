@@ -7,5 +7,6 @@ steps:
     - '-c'
     - | 
       echo "Applying TF"
-      terraform init
-      terraform plan
+      pwd
+      # terraform init
+      # terraform plan
