@@ -10,5 +10,5 @@ steps:
       pwd
       ls -l
       uname -a
-      # terraform init
+      terraform init
       # terraform plan
