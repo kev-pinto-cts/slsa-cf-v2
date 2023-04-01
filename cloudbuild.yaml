@@ -1,9 +1,8 @@
 steps:
   - id: 'python'
-    entrypoint: python3
-    args:
-    - |
-      -m pip install --upgrade pip
+    entrypoint: python
+    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
+
   - id: 'tf-apply'
     waitFor: ['python']
     name: 'hashicorp/terraform:1.4.4'
