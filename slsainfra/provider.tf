@@ -11,3 +11,10 @@ terraform {
     }
   }
 }
+
+terraform {
+  backend "gcs" {
+    bucket = "terraform-state-305379539480"
+    prefix = "terraform/state"
+  }
+}
