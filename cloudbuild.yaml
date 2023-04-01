@@ -8,5 +8,6 @@ steps:
     - | 
       echo "Applying TF"
       pwd
+      ls -l
       # terraform init
       # terraform plan
