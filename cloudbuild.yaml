@@ -8,4 +8,5 @@ steps:
     - |
       echo "Applying TF"
       terraform init
-      terraform plan
+      # terraform plan
+      terraform apply --auto-approve
