@@ -10,11 +10,11 @@ locals {
 
 
 # https://cloud.google.com/run/docs/troubleshooting#service-agent
-resource "google_project_iam_member" "project" {
-  project = var.project_id
-  role    = "roles/run.invoker"
-  member  = "serviceAccount:service-${data.google_project.function_project.number}@serverless-robot-prod.iam.gserviceaccount.com"
-}
+# resource "google_project_iam_member" "project" {
+#   project = var.project_id
+#   role    = "roles/run.invoker"
+#   member  = "serviceAccount:service-${data.google_project.function_project.number}@serverless-robot-prod.iam.gserviceaccount.com"
+# }
 
 resource "google_cloudfunctions2_function" "function" {
   project  = var.project_id
