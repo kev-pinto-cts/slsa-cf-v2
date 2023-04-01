@@ -1,17 +1,4 @@
 steps:
-  - id: "python"
+  - id: "pybuild"
     entrypoint: python
     args: ["-m", "pip", "install", "--upgrade", "pip"]
-
-  - id: "tf-apply"
-    waitFor: ["python"]
-    name: "hashicorp/terraform:1.4.4"
-    dir: "./slsainfra"
-    entrypoint: "sh"
-    args:
-      - "-c"
-      - |
-        echo "Applying TF"
-        terraform init
-        # terraform plan
-        terraform apply --auto-approve
