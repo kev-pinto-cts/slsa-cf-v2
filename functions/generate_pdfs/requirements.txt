@@ -1,5 +1,4 @@
-urllib3==1.26.8 @https://artifactregistry.googleapis.com/v1/projects/cloud-aoss/locations/us/repositories/cloud-aoss-python/pythonPackages
-jsonschema==4.4.0 @https://artifactregistry.googleapis.com/v1/projects/cloud-aoss/locations/us/repositories/cloud-aoss-python/pythonPackages
+urllib3==1.26.8 @ http://us-python.pkg.dev/cloud-aoss/cloud-aoss-python/urllib3/urllib3-1.26.8-py2.py3-none-any.whl
 functions-framework==3.0.0
 google-cloud-bigquery[bqstorage,pandas]==3.7.0
 google-cloud-storage==2.7.0

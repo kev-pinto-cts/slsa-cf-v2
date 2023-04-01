@@ -11,6 +11,7 @@ steps:
         pip install keyrings.google-artifactregistry-auth
         keyring --list-backends
 
+
   - id: "tf-apply"
     waitFor: ['install-keyring']
     name: "hashicorp/terraform:1.4.4"
