@@ -18,6 +18,8 @@ steps:
       - "-c"
       - |
         echo "Keyring"
+        pip install keyring
+        pip install keyrings.google-artifactregistry-auth
         keyring --list-backends
 
   - id: "tf apply"
