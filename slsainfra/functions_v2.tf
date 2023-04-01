@@ -18,7 +18,7 @@ resource "google_project_iam_member" "project" {
 
 resource "google_cloudfunctions2_function" "function" {
   project  = var.project_id
-  name     = "generate-pdfs"
+  name     = "generate-pdfs-slsa"
   location = var.region
 
 

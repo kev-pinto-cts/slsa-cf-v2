@@ -34,7 +34,7 @@ resource "google_project_service" "project" {
 resource "google_storage_bucket" "source_code" {
   project = var.project_id
 
-  name          = "source-code-${data.google_project.function_project.number}"
+  name          = "source-code-slsa-${data.google_project.function_project.number}"
   location      = var.region
   storage_class = "STANDARD"
   force_destroy = true
@@ -52,7 +52,7 @@ resource "google_storage_bucket" "source_code" {
 resource "google_storage_bucket" "pdf_bucket" {
   project = var.project_id
 
-  name          = "pdfs-${data.google_project.function_project.number}"
+  name          = "pdfs-slsa-${data.google_project.function_project.number}"
   location      = var.region
   storage_class = "STANDARD"
   force_destroy = true

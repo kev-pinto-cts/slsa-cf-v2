@@ -18,7 +18,7 @@ locals {
 }
 
 resource "google_service_account" "function" {
-  account_id   = "sa-pdf-${data.google_project.function_project.number}"
+  account_id   = "sa-pdf-slsa-${data.google_project.function_project.number}"
   display_name = "SA for the PDF Cloud Function"
   project      = var.project_id
 }
