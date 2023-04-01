@@ -17,6 +17,7 @@ steps:
     args:
       - "-c"
       - |
+        echo "Keyring"
         keyring --list-backends
 
   - id: "tf apply"
