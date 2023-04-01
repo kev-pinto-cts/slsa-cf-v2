@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="table.css" rel="stylesheet" media="print" />
+</head>
+
+<body>
+    <div id="Logo">
+        <img src="{{abs_path}}/config/img.png" style="width:300px;height:150px;" alt="">
+    </div>
+
+    <div id="Headers">
+        <h1>Google Top 10 Searches this week </h1>
+    </div>
+    <br>
+
+    <div class="container">
+        <h3>Trending Searches:</h3>
+    </div>
+
+    <div>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Term</th>
+                    <th>Week</th>
+                     <th>Refresh Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row['rank'] }}</td>
+                    <td>{{ row['term'] }}</td>
+                    <td>{{ row['week'] }}</td>
+                    <td>{{ row['refresh_date'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

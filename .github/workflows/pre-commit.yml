@@ -1,0 +1,38 @@
+name: pre-commit
+
+on:
+  pull_request:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install terraform-docs
+        env:
+          TERRAFORM_DOCS_VERSION: 0.16.0
+        run: |
+          curl -SOL https://github.com/terraform-docs/terraform-docs/releases/download/v${TERRAFORM_DOCS_VERSION}/terraform-docs-v${TERRAFORM_DOCS_VERSION}-$(uname)-$(dpkg --print-architecture).tar.gz
+          tar xzf terraform-docs-v${TERRAFORM_DOCS_VERSION}-$(uname)-$(dpkg --print-architecture).tar.gz -C /tmp/
+          sudo install /tmp/terraform-docs /usr/bin/
+      - name: Install terraform
+        env:
+          TERRAFORM_VERSION: 1.2.6
+        run: |
+          curl -SOL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_$(uname | tr '[:upper:]' '[:lower:]')_$(dpkg --print-architecture).zip
+          unzip terraform_${TERRAFORM_VERSION}_$(uname | tr '[:upper:]' '[:lower:]')_$(dpkg --print-architecture).zip -d /tmp/
+          sudo install /tmp/terraform /usr/bin/
+      - name: Install terragrunt
+        env:
+          TERRAGRUNT_VERSION: 0.38.6
+        run: |
+          curl -SOL https://github.com/gruntwork-io/terragrunt/releases/download/v$TERRAGRUNT_VERSION/terragrunt_$(uname | tr '[:upper:]' '[:lower:]')_$(dpkg --print-architecture)
+          sudo mv terragrunt_$(uname | tr '[:upper:]' '[:lower:]')_$(dpkg --print-architecture) /usr/bin/terragrunt
+          sudo chmod +x /usr/bin/terragrunt
+      - uses: actions/setup-node@v2
+      - name: Install markdownlint-cli
+        run: sudo npm install -g markdownlint-cli
+      - uses: actions/setup-python@v2
+      - uses: pre-commit/action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

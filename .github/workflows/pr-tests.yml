@@ -1,0 +1,19 @@
+name: test-on-pr
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: pip install -U -r functions/requirements.txt --no-cache-dir
+      - name: Install dependencies
+        run: pip install -r functions/requirements-test.txt --no-cache-dir
+      - name: Run tests
+        run: pytest

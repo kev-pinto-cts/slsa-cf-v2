@@ -1,0 +1,8 @@
+- id: 'tf apply'
+  name: 'hashicorp/terraform:1.4.4'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+     echo "Applying TF"
+     terraform apply -auto-approve
