@@ -1,3 +1,5 @@
+urllib3==1.26.8
+jsonschema==4.4.0
 functions-framework==3.0.0
 google-cloud-bigquery[bqstorage,pandas]==3.7.0
 google-cloud-storage==2.7.0
