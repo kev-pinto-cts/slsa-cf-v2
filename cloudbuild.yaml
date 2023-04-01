@@ -1,5 +1,11 @@
 steps:
+  - id: python
+    entrypoint: python3
+    args:
+    - |
+      -m pip install --upgrade pip
   - id: 'tf apply'
+    waitFor: ['python']
     name: 'hashicorp/terraform:1.4.4'
     dir:  './slsainfra'
     entrypoint: 'sh'
