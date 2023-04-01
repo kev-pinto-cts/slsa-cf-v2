@@ -12,7 +12,8 @@ steps:
 
   - id: "list-keys"
     waitFor: ['arti-reg-auth']
-    name: bash
+    name: python
+    entrypoint: "sh"
     args:
       - "-c"
       - |
