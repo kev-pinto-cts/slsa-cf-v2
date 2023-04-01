@@ -1,4 +1,4 @@
-urllib3==1.26.8 @ http://us-python.pkg.dev/cloud-aoss/cloud-aoss-python/urllib3/urllib3-1.26.8-py2.py3-none-any.whl
+urllib3 @ http://us-python.pkg.dev/cloud-aoss/cloud-aoss-python/urllib3/urllib3-1.26.8-py2.py3-none-any.whl
 functions-framework==3.0.0
 google-cloud-bigquery[bqstorage,pandas]==3.7.0
 google-cloud-storage==2.7.0
